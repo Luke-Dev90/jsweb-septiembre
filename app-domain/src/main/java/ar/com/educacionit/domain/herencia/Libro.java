@@ -13,6 +13,21 @@ public class Libro extends Articulo{
 		this.editorial = editorial;
 		
 	}
+
+	public String getEditorial() {
+		return editorial;
+	}
+
+	public void setEditorial(String editorial) {
+		this.editorial = editorial;
+	}
+
+	@Override
+	public String toString() {
+		String toStringPadre = super.toString();
+		String toStringHijo = ", editorial" + this.editorial;
+		return toStringPadre + toStringHijo;
+	}
 	
 	
 

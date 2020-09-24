@@ -13,6 +13,15 @@ public class Pelicula extends Articulo {
 	
 	
 	
+	@Override
+	public String toString() {
+		String toStringPadre = super.toString();
+		String toStringHijo = ",Formato: " + this.formato + " Fecha publicación: " + this.fechaPublicacion;
+		return toStringPadre + toStringHijo;
+	}
+
+
+
 	public Pelicula(String titulo, String autor, Float precio, String formato, Date fechaPublicacion) {
 		super(titulo, autor, precio);
 		this.formato = formato;

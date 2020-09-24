@@ -13,6 +13,14 @@ public class PasaTiempo extends Articulo{
 	public void setMarca(String marca) {
 		this.marca = marca;
 	}
+
+	@Override
+	public String toString() {
+		String toStringPadre = super.toString();
+		String toStringHijo = ", marca: " + this.marca;
+		return toStringPadre + toStringHijo;
+	}
+	
 	
 	
 }

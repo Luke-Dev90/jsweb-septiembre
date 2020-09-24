@@ -54,8 +54,14 @@ public class Articulo
 
 	
 		
-	
-	
+	@Override
+	public String toString() {
+		String estado = "titulo: " + this.getTitulo() ;
+		estado = estado + " Autor: " + this.getAutor();
+		estado = estado + " Precio: "+ this.getPrecio();
+		estado = estado + " categoria: " + this.getCategoria();
+		return estado;
+	}
 	
 	
 }

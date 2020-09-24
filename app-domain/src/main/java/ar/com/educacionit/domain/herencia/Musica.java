@@ -9,6 +9,12 @@ public class Musica extends Articulo {
 		this.categoria = 2;
 		this.selloDiscografico = selloD;
 	}
+	@Override
+	public String toString() {
+		String toStringPadre = super.toString();
+		String toStringHijo = ",Sello Discografico " + this.selloDiscografico;
+		return toStringPadre + toStringHijo;
+	}
 	
 	
 	

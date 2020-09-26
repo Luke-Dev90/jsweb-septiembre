@@ -41,8 +41,29 @@ public class BuscadorMain {
 		
 		
 		for(BuscadorBase buscador : buscadores ) {
-			System.out.println("Mostrando resultado del buscador " + buscador.getClass().getSimpleName());	
-			Articulo[] articulos = buscador.buscar();
+			//tipo de buscador?
+			
+			//ctrl+shift+i
+			System.out.println("Mostrando resultado del buscador " + buscador.getClass().getSimpleName());
+			
+			//ejecuta la busqueda
+			buscador.buscar();
+			
+			if(buscador instanceof BuscadorLibro) {
+				
+				BuscadorLibro buscadorLibro = (BuscadorLibro)buscador;
+				Articulo mayorPrecio = buscadorLibro.obtenerLibroMayorPrecio();
+				System.out.println("Libro de mayor Precio:" + mayorPrecio.toString());
+				
+				//UP CASTING
+				BuscadorBase buscadorUp = (BuscadorBase)buscadorLibro;
+				
+				
+			}
+			
+			
+			
+			Articulo[] articulos = buscador.resultados;
 			
 			for(Articulo articulo : articulos) {
 				String estadoDelArticulo = articulo.toString();
@@ -50,6 +71,7 @@ public class BuscadorMain {
 			}
 			System.out.println("--------------");
 		}
+		System.out.println("Fin de la busqueda");
 	}
 
 }

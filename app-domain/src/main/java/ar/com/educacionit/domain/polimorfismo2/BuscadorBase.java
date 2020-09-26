@@ -5,15 +5,19 @@ import ar.com.educacionit.domain.herencia.Libro;
 import ar.com.educacionit.domain.herencia.Musica;
 import ar.com.educacionit.domain.herencia.PasaTiempo;
 import ar.com.educacionit.domain.herencia.Pelicula;
+	
 
 public abstract class BuscadorBase {
 		protected String claveBusqueda;
-	
+		
+		protected Articulo[] resultados;
+		
 		public BuscadorBase(String clave) {
 			this.claveBusqueda = clave;
 		}
 		
-		public Articulo[] buscar() {
+		public void buscar() { 
+			
 			//SELECT * FROM tabla_hija where
 			
 			String sqlPadre = "SELECT * FROM ";
@@ -38,9 +42,12 @@ public abstract class BuscadorBase {
 			articulos[2] = pelicula;
 			articulos[3] = pasatiempo;
 			
-			return articulos;
+			this.resultados = articulos;
 		}
 		
 		protected abstract String getSQL();
 		
+		public Articulo[] obtenerResultados() {
+			return this.resultados;
+		}
 }

@@ -1,6 +1,5 @@
 <?xml version="1.0"?>
-<project 
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
@@ -8,16 +7,20 @@
     <artifactId>app-parent</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
-
-  <artifactId>app-web</artifactId>
-  <packaging>war</packaging>
- 
+  <groupId>ar.com.educacionit</groupId>
+  <artifactId>app-service</artifactId>
+  <version>1.0.0-SNAPSHOT</version>
+  <name>app-service</name>
+  <url>http://maven.apache.org</url>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
   <dependencies>
-    <!-- dependencias propias y de terceros -->
     <dependency>
-    	<groupId>ar.com.educacionit</groupId>
-    	<artifactId>app-service</artifactId>
-    	<version>1.0.0-SNAPSHOT</version>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>3.8.1</version>
+      <scope>test</scope>
     </dependency>
     <dependency>
     	<groupId>ar.com.educacionit</groupId>
@@ -30,8 +33,4 @@
     	<version>1.0.0-SNAPSHOT</version>
     </dependency>
   </dependencies>
-  
-  <build>
-    <finalName>app-web</finalName>
-  </build>
 </project>
